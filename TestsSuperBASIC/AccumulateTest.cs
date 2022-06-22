@@ -29,7 +29,7 @@ namespace TestsSuperBASIC
 			Runtime r = new Runtime(lib);
 			r.OpenFile(Directory.GetCurrentDirectory() + "\\CasDeTest\\AccumulateTest.basic");
 			r.Run();
-			Assert.AreEqual(45, printer.output[0]);
+			Assert.AreEqual(20, printer.output[0]);
 		}
 
 	}
