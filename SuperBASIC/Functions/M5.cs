@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SuperBASIC.Functions
 {
-    class M5 : IFunction
+    public class M5 : IFunction
     {
  /*       Renvoie la médiane de A B C D et E
         La médiane est la valeur située au milieu de la liste de 5 valeurs, 
