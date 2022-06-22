@@ -37,9 +37,7 @@ namespace SuperBASIC
 				lib.AddFunction(new Functions.Accumulate(), 2, "ACCUMULATE");
 				lib.AddFunction(new Functions.StalinSort(), 2, "STALIN_SORT");
 				lib.AddFunction(new Functions.M5(), 5, "M5");
-				lib.AddFunction(new Functions.Average(), 2, "AVERAGE");
-
-
+				lib.AddFunction(new Functions.Partition(), 2, "PARTITION");
 				Runtime r = new Runtime(lib);
 				if (args.Length <= 1)
 				{
