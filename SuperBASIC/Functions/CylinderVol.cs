@@ -4,12 +4,11 @@ using System.Text;
 
 namespace SuperBASIC.Functions
 {
-	public class Print : IFunction
-	{
+    public class CylinderVol : IFunction
+    {
 		float IFunction.Apply(List<BasicNumber> arguments)
 		{
-			Console.WriteLine(arguments[0].GetValue());
-			return 0f;
+			return (float)(Math.PI * arguments[0] * arguments[0] * arguments[1]);
 		}
 	}
 }
