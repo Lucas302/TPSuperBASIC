@@ -18,7 +18,8 @@ namespace SuperBASIC.Functions
             {
                 ListParam.Add(argument);
             }
-            mediane = ListParam[(5 - 1) / 2];
+            ListParam.Sort();
+            mediane = ListParam[(nbArgs - 1) / 2];
             return mediane;
         }
     }
