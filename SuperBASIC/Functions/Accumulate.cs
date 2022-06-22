@@ -4,27 +4,21 @@ using System.Text;
 
 namespace SuperBASIC.Functions
 {
-    public class Accumulate : IFunction
-    {
-        float a, b;
-        float sum = 0;
-        public float Apply(List<BasicNumber> arguments)
-        {
+	public class Accumulate : IFunction
+	{
+		static public float Execute(int start, int end)
+		{
+			float total = 0;
+			for (int i = start; i <= end; i++)
+			{
+				total += Memory.MemoryGet((short)i);
+			}
+			return total;
+		}
 
-            a = Memory.MemoryGet((short)arguments[0].GetValue());
-            b = Memory.MemoryGet((short)arguments[1].GetValue());
-
-            if (a < b)
-            {
-                for (var i = a; i < b+1; i++)
-                {
-                    sum = sum + i;
-                }
-            } else
-            {
-                return float.NaN;
-            }
-            return sum;
-        }
-    }
+		float IFunction.Apply(List<BasicNumber> arguments)
+		{
+			return Execute((int)arguments[0], (int)arguments[1]);
+		}
+	}
 }
