@@ -22,7 +22,7 @@ namespace SuperBASIC.Functions
             else
             {
                 var obb = new OrthogonalBBox();
-                obb.
+                
                 
                 
                 
