@@ -52,9 +52,27 @@ namespace TestsSuperBASIC
 			lib.AddFunction(new SuperBASIC.Functions.Euler(), 0, "EULER");
 			lib.AddFunction(new SuperBASIC.Functions.CylinderVol(), 2, "CYLINDER_VOL");
 			Runtime r = new Runtime(lib);
-			r.OpenFile(@"C:\\Users\\Administrateur\\source\\repos\\TPSuperBASIC\\TestsSuperBASIC\\CasDeTest\\Test_CylinderVol.basic");
+			r.OpenFile(Directory.GetCurrentDirectory() + "\\CasDeTest\\Test_CylinderVol.basic");
 			r.Run();
 			Assert.AreEqual(37.6991118f, printer.output[0], 0.001f);
+		}
+		[TestMethod]
+		public void TestCos()
+        {
+			Library lib = new Library();
+			var printer = new Mock.MockPrint();
+			lib.AddFunction(printer, 1, "PRINT");
+
+			lib.AddFunction(new SuperBASIC.Functions.MemoryStore(), 2, "MEMSTORE");
+			lib.AddFunction(new SuperBASIC.Functions.Cos(), 1, "COS");
+			Runtime r = new Runtime(lib);
+			r.OpenFile(Directory.GetCurrentDirectory() + "\\CasDeTest\\TestCos.basic");
+			r.Run();
+			var expected = 0.8414709848;
+			var received = printer.output[0];
+			double delta = 0.001;
+			Assert.AreEqual(expected, received, delta);
+
 		}
 	}
 }
