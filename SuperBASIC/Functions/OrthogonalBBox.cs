@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SuperBASIC.Functions
 {
-    class OrthogonalBBox : IFunction
+    public class OrthogonalBBox : IFunction
     {
         float IFunction.Apply(List<BasicNumber> arguments)
         {
