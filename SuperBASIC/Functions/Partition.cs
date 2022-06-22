@@ -12,7 +12,7 @@ namespace SuperBASIC.Functions
            // start = (short)start;
             short pivot = (short)Memory.MemoryGet((short)start);
             int i = start - 1;
-            int j = end;
+            int j = end + 1;
             while (true)
             {
                 do
@@ -64,12 +64,10 @@ namespace SuperBASIC.Functions
                 Liste.Add(Memory.MemoryGet(x));
             }
             QuickSort((int)start, (int)end);
-            // int cpt = 0;
+            
             for (short x = start; x <= end; x++)
             {
-                ;
                 Console.WriteLine(Memory.MemoryGet(x));
-
             }
             return 0f;
         }
