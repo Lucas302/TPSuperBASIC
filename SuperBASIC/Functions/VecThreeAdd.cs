@@ -12,7 +12,7 @@ namespace SuperBASIC.Functions
 
             for (var i = 0; i < 3; i++)
             {
-               Memory.MemorySet((short)value, ((arguments[0].GetValue() + i) + (arguments[1].GetValue + i)));
+               Memory.MemorySet((short)value, ((arguments[0].GetValue() + i) + (arguments[1].GetValue() + i)));
                value++;
             }
             return 0;
