@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SuperBASIC.Functions
 {
-    class Accumulate : IFunction
+    public class Accumulate : IFunction
     {
         float a, b;
         float sum = 0;

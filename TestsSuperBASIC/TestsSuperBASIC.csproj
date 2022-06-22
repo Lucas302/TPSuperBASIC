@@ -24,6 +24,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="CasDeTest\AccumulateTest.basic">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="CasDeTest\M5Test.basic">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
