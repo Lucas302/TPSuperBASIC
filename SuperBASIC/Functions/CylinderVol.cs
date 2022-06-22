@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SuperBASIC.Functions
 {
-    class CylinderVol : IFunction
+    public class CylinderVol : IFunction
     {
 		float IFunction.Apply(List<BasicNumber> arguments)
 		{
