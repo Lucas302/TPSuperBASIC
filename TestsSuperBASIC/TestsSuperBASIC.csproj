@@ -45,6 +45,9 @@
     <None Update="CasDeTest\TestAsin.basic">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="CasDeTest\TestAtan.basic">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="CasDeTest\TestCos.basic">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
