@@ -27,9 +27,12 @@ namespace SuperBASIC
 				lib.AddFunction(new Functions.Sin(), 1, "SIN");
 				lib.AddFunction(new Functions.Sin(), 1, "ACOS");
 				lib.AddFunction(new Functions.Sin(), 1, "TAN");
+				lib.AddFunction(new Functions.Sin(), 1, "ATAN");
 				lib.AddFunction(new Functions.Rem(), 2, "REM");
 				lib.AddFunction(new Functions.VecThreeAdd(), 3, "VEC3ADD");
+				lib.AddFunction(new Functions.OrthogonalBBox(), 3, "ORTHOGONAL_BBOX");
 				lib.AddFunction(new Functions.SphereVol(), 1, "SPHERE_VOL");
+				lib.AddFunction(new Functions.CylinderVol(), 2, "CYLINDER_VOL");
 				lib.AddFunction(new Functions.Gratio(), 0, "GRATIO");
 				lib.AddFunction(new Functions.Accumulate(), 2, "ACCUMULATE");
 				lib.AddFunction(new Functions.StalinSort(), 2, "STALIN_SORT");
