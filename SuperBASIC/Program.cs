@@ -25,6 +25,8 @@ namespace SuperBASIC
 				lib.AddFunction(new Functions.Cos(), 1, "COS");
 				lib.AddFunction(new Functions.ASin(), 1, "ASIN");
 				lib.AddFunction(new Functions.Sin(), 1, "SIN");
+				lib.AddFunction(new Functions.Sin(), 1, "ACOS");
+				lib.AddFunction(new Functions.Sin(), 1, "TAN");
 				lib.AddFunction(new Functions.Rem(), 2, "REM");
 				lib.AddFunction(new Functions.SphereVol(), 1, "SPHERE_VOL");
 				lib.AddFunction(new Functions.Gratio(), 0, "GRATIO");
