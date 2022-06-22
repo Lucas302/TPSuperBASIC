@@ -7,37 +7,38 @@ namespace SuperBASIC.Functions
     class Partition : IFunction
     {
 
-        public static int Part(List<float> a, int start, int end)
+        public static short Part(int start, int end)
         {
-            float pivot = a[start];
-            int i = start;
+           // start = (short)start;
+            short pivot = (short)Memory.MemoryGet((short)start);
+            int i = start - 1;
             int j = end;
             while (true)
             {
                 do
                 {
                     i++;
-                } while (a[i] < pivot);
+                } while (Memory.MemoryGet((short)i) < pivot);
 
                 do
                 {
                     j--;
-                } while (a[j] > pivot);
+                } while (Memory.MemoryGet((short)j) > pivot);
 
                 if (i >= j)
                 {
-                    return j;
+                    return (short)j;
                 }
-                var temp = a[i];
-                a[i] = a[j];
-                a[j] = temp;
+                var temp = Memory.MemoryGet((short)i);
+                Memory.MemorySet((short)i, Memory.MemoryGet((short)j));
+                Memory.MemorySet((short)j, temp);
             }
-              return j;
+              return (short)i;
         }
 
         // Routine de tri rapide
 
-        static void QuickSort(List<float> a, int low, int high)
+        static void QuickSort(int low, int high)
 
         {
             // condition de base
@@ -46,29 +47,31 @@ namespace SuperBASIC.Functions
                 return;
             }
             // réarrange les éléments sur le pivot
-            int pivot = Part(a, low, high);
+            int pivot = Part(low, high);
             // se reproduit sur le sous-tableau contenant des éléments inférieurs au pivot
-            QuickSort(a, low, pivot);
+            QuickSort(low, pivot);
             // se reproduisent sur le sous-tableau contenant des éléments qui sont plus que le pivot
-            QuickSort(a, pivot + 1, high);
+            QuickSort(pivot + 1 , high);
+
         }
         public float Apply(List<BasicNumber> arguments)
         {
             short start = (short)arguments[0].GetValue();
             short end = (short)arguments[1].GetValue();
             List<float> Liste = new List<float>();
-            for(short x = start; x < end; x++)
+            for(short x = start; x <= end; x++)
             {
                 Liste.Add(Memory.MemoryGet(x));
             }
-            QuickSort(Liste, start, end);
-            int cpt = 0;
-            for(short x = start; x < end; x++)
+            QuickSort((int)start, (int)end);
+            // int cpt = 0;
+            for (short x = start; x <= end; x++)
             {
-                Memory.MemorySet(x, Liste[cpt]);
-                cpt++;
+                ;
+                Console.WriteLine(Memory.MemoryGet(x));
+
             }
-            return 0;
+            return 0f;
         }
     }
 }
