@@ -22,6 +22,8 @@ namespace SuperBASIC
 				lib.AddFunction(new Functions.Goto(), 1, "GOTO");
 				lib.AddFunction(new Functions.Pi(), 0, "PI");
 				lib.AddFunction(new Functions.Euler(), 0, "EULER");
+				lib.AddFunction(new Functions.Cos(), 1, "COS");
+
 				Runtime r = new Runtime(lib);
 				if (args.Length <= 1)
 				{
