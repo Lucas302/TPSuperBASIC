@@ -21,33 +21,26 @@ namespace SuperBASIC.Functions
             }
             else
             {
-                var obb = new OrthogonalBBox();
-                
-                
-                
-                
-/*                float minx = Memory.MemoryGet(inta);
-                float miny = Memory.MemoryGet((short)(inta + 1));
-                float minz = Memory.MemoryGet((short)(inta + 2));
-                float maxx = Memory.MemoryGet(inta);
-                float maxy = Memory.MemoryGet((short)(inta + 1));
-                float maxz = Memory.MemoryGet((short)(inta + 2));
-                for (int i = 1; i < ((intb - inta + 1) / 3); i++)
+                var listepoints = new List<Point>();
+                for (int i = 0; i < ((intb - inta + 1) / 3); i++)
                 {
-                    if (Memory.MemoryGet((short)(inta + 3 * i)) < minx) { minx = Memory.MemoryGet((short)(inta + 3 * i)); }
-                    if (Memory.MemoryGet((short)(inta + 3 * i + 1)) < miny) { miny = Memory.MemoryGet((short)(inta + 3 * i + 1)); }
-                    if (Memory.MemoryGet((short)(inta + 3 * i + 2)) < minz) { minz = Memory.MemoryGet((short)(inta + 3 * i + 2)); }
-                    if (Memory.MemoryGet((short)(inta + 3 * i)) > maxx) { maxx = Memory.MemoryGet((short)(inta + 3 * i)); }
-                    if (Memory.MemoryGet((short)(inta + 3 * i + 1)) > maxy) { maxy = Memory.MemoryGet((short)(inta + 3 * i + 1)); }
-                    if (Memory.MemoryGet((short)(inta + 3 * i + 2)) > maxz) { maxz = Memory.MemoryGet((short)(inta + 3 * i + 2)); }
+                    var point = new Point();
+                    point.x = Memory.MemoryGet((short)(inta + 3 * i));
+                    point.y = Memory.MemoryGet((short)(inta + 3 * i + 1));
+                    point.z = Memory.MemoryGet((short)(inta + 3 * i + 2));
+                    listepoints.Add(point);
                 }
-                Memory.MemorySet(intd, minx);
-                Memory.MemorySet((short)(intd + 1), miny);
-                Memory.MemorySet((short)(intd + 2), minz);
-                Memory.MemorySet((short)(intd + 3), maxx);
-                Memory.MemorySet((short)(intd + 4), maxy);
-                Memory.MemorySet((short)(intd + 5), maxz);
-*/                return 0;
+                var petit = new Point();
+                var grand = new Point();
+                (petit, grand) = OrthogonalBBox.CalculateBox(listepoints);
+
+                Memory.MemorySet(intd, (petit.x + grand.x) / 2);
+                Memory.MemorySet((short)(intd + 1), (petit.y + grand.y) / 2);
+                Memory.MemorySet((short)(intd + 2), petit.z);
+                Memory.MemorySet((short)(intd + 3), (float)System.Math.Sqrt((grand.x - petit.x) * (grand.x - petit.x) / 4.0f + (grand.y - petit.y) * (grand.y - petit.y) / 4.0f));
+                Memory.MemorySet((short)(intd + 4), grand.z - petit.z);
+
+                return 0;
             }
         }
     }

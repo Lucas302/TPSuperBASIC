@@ -8,7 +8,7 @@ namespace SuperBASIC.Functions
     public struct Point { public float x; public float y; public float z; }
     public class OrthogonalBBox : IFunction
     {
-        static (Point, Point) CalculateBox(List<Point> points)
+        static public (Point, Point) CalculateBox(List<Point> points)
         {
             Point petit;
             Point grand;
