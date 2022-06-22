@@ -36,6 +36,9 @@
     <None Update="CasDeTest\PrebuiltTest-TestA.basic">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="CasDeTest\SolveLinearTest.basic">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="CasDeTest\TestAcos.basic">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
