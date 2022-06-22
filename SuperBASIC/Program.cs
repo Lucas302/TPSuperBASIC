@@ -30,6 +30,7 @@ namespace SuperBASIC
 				lib.AddFunction(new Functions.Rem(), 2, "REM");
 				lib.AddFunction(new Functions.SphereVol(), 1, "SPHERE_VOL");
 				lib.AddFunction(new Functions.Gratio(), 0, "GRATIO");
+				lib.AddFunction(new Functions.StalinSort(), 2, "STALIN_SORT");
 
 				Runtime r = new Runtime(lib);
 				if (args.Length <= 1)
