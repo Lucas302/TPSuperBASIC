@@ -94,5 +94,22 @@ namespace TestsSuperBASIC
 			double delta = 0.001;
 			Assert.AreEqual(expected, received, delta);
 		}
+		[TestMethod]
+		public void TestAtan()
+		{
+			Library lib = new Library();
+			var printer = new Mock.MockPrint();
+			lib.AddFunction(printer, 1, "PRINT");
+
+			lib.AddFunction(new SuperBASIC.Functions.MemoryStore(), 2, "MEMSTORE");
+			lib.AddFunction(new SuperBASIC.Functions.ATan(), 1, "ATAN");
+			Runtime r = new Runtime(lib);
+			r.OpenFile(Directory.GetCurrentDirectory() + "\\CasDeTest\\TestAtan.basic");
+			r.Run();
+			var expected = 0.78539816;
+			var received = printer.output[0];
+			double delta = 0.001;
+			Assert.AreEqual(expected, received, delta);
+		}
 	}
 }
