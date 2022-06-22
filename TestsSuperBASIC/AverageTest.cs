@@ -6,10 +6,10 @@ using System.Linq;
 namespace TestsSuperBASIC
 {
 	[TestClass]
-	public class AccumulateTest
+	public class AverageTest
 	{
 		[TestMethod]
-		public void Accumulate()
+		public void Average()
 		{
 
 			Library lib = new Library();
@@ -24,12 +24,13 @@ namespace TestsSuperBASIC
 			lib.AddFunction(new SuperBASIC.Functions.Goto(), 1, "GOTO");
 			lib.AddFunction(new SuperBASIC.Functions.Pi(), 0, "PI");
 			lib.AddFunction(new SuperBASIC.Functions.Euler(), 0, "EULER");
-			lib.AddFunction(new SuperBASIC.Functions.CylinderVol(), 2, "CYLINDER_VOL");
 			lib.AddFunction(new SuperBASIC.Functions.Accumulate(), 2, "ACCUMULATE");
+			lib.AddFunction(new SuperBASIC.Functions.Average(), 2, "AVERAGE");
+
 			Runtime r = new Runtime(lib);
-			r.OpenFile(Directory.GetCurrentDirectory() + "\\CasDeTest\\AccumulateTest.basic");
+			r.OpenFile(Directory.GetCurrentDirectory() + "\\CasDeTest\\AverageTest.basic");
 			r.Run();
-			Assert.AreEqual(20, printer.output[0]);
+			Assert.AreEqual(5, printer.output[0]);
 		}
 
 	}
