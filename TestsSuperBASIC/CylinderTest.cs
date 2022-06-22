@@ -1,16 +1,17 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SuperBASIC;
 using System.IO;
 using System.Linq;
 
 namespace TestsSuperBASIC
 {
-    [TestClass]
-    public class PrebuiltTest
-    {
-        [TestMethod]
-        public void TestA()
-        {
+	[TestClass]
+	public class CylinderTest
+	{
+		[TestMethod]
+		public void Test_CylinderVol()
+		{
+
 			Library lib = new Library();
 			var printer = new Mock.MockPrint();
 			lib.AddFunction(printer, 1, "PRINT");
@@ -24,13 +25,12 @@ namespace TestsSuperBASIC
 			lib.AddFunction(new SuperBASIC.Functions.Goto(), 1, "GOTO");
 			lib.AddFunction(new SuperBASIC.Functions.Pi(), 0, "PI");
 			lib.AddFunction(new SuperBASIC.Functions.Euler(), 0, "EULER");
+			lib.AddFunction(new SuperBASIC.Functions.CylinderVol(), 2, "CYLINDER_VOL");
 			Runtime r = new Runtime(lib);
-			r.OpenFile(Directory.GetCurrentDirectory() + "\\CasDeTest\\PrebuiltTest-TestA.basic");
+			r.OpenFile(Directory.GetCurrentDirectory() + "\\CasDeTest\\Test_CylinderVol.basic");
 			r.Run();
-			foreach(var (expected, received) in Enumerable.Range(1,10).Zip(printer.output))
-            {
-				Assert.AreEqual(expected, received);
-            }
+			Assert.AreEqual(37.6991118f, printer.output[0], 0.001f);
 		}
+
 	}
 }
