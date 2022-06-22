@@ -59,6 +59,7 @@ namespace TestsSuperBASIC
 			double delta = 0.001;
 			Assert.AreEqual(expected, received, delta);
 		}
+
 		[TestMethod]
 		public void TestAsin()
 		{

@@ -48,6 +48,9 @@
     <None Update="CasDeTest\Test_CylinderVol.basic">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="CasDeTest\Test_OrthogonalBBox.basic">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
