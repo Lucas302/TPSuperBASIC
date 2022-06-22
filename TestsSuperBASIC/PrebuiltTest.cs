@@ -11,7 +11,6 @@ namespace TestsSuperBASIC
         [TestMethod]
         public void TestA()
         {
-
 			Library lib = new Library();
 			var printer = new Mock.MockPrint();
 			lib.AddFunction(printer, 1, "PRINT");
@@ -33,5 +32,5 @@ namespace TestsSuperBASIC
 				Assert.AreEqual(expected, received);
             }
 		}
-    }
+	}
 }

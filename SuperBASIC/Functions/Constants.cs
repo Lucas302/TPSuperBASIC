@@ -18,4 +18,11 @@ namespace SuperBASIC.Functions
 			return (float)Math.E;
 		}
 	}
+	public class Gratio : IFunction
+	{
+		float IFunction.Apply(List<BasicNumber> arguments)
+		{
+			return (float)1.61803398875;
+		}
+	}
 }

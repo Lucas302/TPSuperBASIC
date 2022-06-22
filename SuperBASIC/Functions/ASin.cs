@@ -8,7 +8,7 @@ namespace SuperBASIC.Functions
     {
         public float Apply(List<BasicNumber> arguments)
         {
-            return (float)Math.Asin(arguments[0]);
+            return (float)Math.Asin(arguments[0].GetValue());
         }
     }
 }
