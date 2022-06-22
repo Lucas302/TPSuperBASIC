@@ -28,9 +28,9 @@ namespace SuperBASIC
 				lib.AddFunction(new Functions.Sin(), 1, "ACOS");
 				lib.AddFunction(new Functions.Sin(), 1, "TAN");
 				lib.AddFunction(new Functions.Rem(), 2, "REM");
+				lib.AddFunction(new Functions.VecThreeAdd(), 3, "VEC3ADD");
 				lib.AddFunction(new Functions.SphereVol(), 1, "SPHERE_VOL");
 				lib.AddFunction(new Functions.Gratio(), 0, "GRATIO");
-				lib.AddFunction(new Functions.Vec3Add(), 3, "VEC3_ADD");
 				lib.AddFunction(new Functions.M5(), 5, "M5");
 				Runtime r = new Runtime(lib);
 				if (args.Length <= 1)
