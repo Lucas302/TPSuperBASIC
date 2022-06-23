@@ -67,7 +67,7 @@ namespace SuperBASIC.Functions
             
             for (short x = start; x <= end; x++)
             {
-                Console.WriteLine("?"+Memory.MemoryGet(x));
+                Console.WriteLine(Memory.MemoryGet(x));
             }
             return 0f;
         }

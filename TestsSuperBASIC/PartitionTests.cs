@@ -11,7 +11,7 @@ namespace TestsSuperBASIC
 	public class PartitionTest
 	{
 		[TestMethod]
-		public void Partition2()
+		public void Partition()
 		{
 
 			Library lib = new Library();
@@ -20,7 +20,7 @@ namespace TestsSuperBASIC
 
 			lib.AddFunction(new SuperBASIC.Functions.MemoryLoad(), 1, "MEMLOAD");
 			lib.AddFunction(new SuperBASIC.Functions.MemoryStore(), 2, "MEMSTORE");
-			lib.AddFunction(new SuperBASIC.Functions.Partition2(), 2, "PARTITION");
+			lib.AddFunction(new SuperBASIC.Functions.Partition(), 2, "PARTITION");
 
 			Runtime r = new Runtime(lib);
 			r.OpenFile(Directory.GetCurrentDirectory() + "\\CasDeTest\\PartitionTests.basic");
