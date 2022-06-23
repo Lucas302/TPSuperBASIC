@@ -24,6 +24,8 @@ namespace SuperBASIC.Functions
 				{
 					return b; 
 				}
+				if (Memory.MemoryGet((short)a) == Memory.MemoryGet((short)b))
+					return b;
 				var temp = Memory.MemoryGet((short)a);
 				Memory.MemorySet((short)a, (float)Memory.MemoryGet((short)b));
 				Memory.MemorySet((short)b, temp);
