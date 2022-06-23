@@ -58,16 +58,12 @@ namespace SuperBASIC.Functions
         {
             short start = (short)arguments[0].GetValue();
             short end = (short)arguments[1].GetValue();
-            List<float> Liste = new List<float>();
-            for(short x = start; x <= end; x++)
-            {
-                Liste.Add(Memory.MemoryGet(x));
-            }
+
             QuickSort((int)start, (int)end);
             
             for (short x = start; x <= end; x++)
             {
-                Console.WriteLine(Memory.MemoryGet(x));
+                Console.WriteLine("Mem: {0}", Memory.MemoryGet(x));
             }
             return 0f;
         }
