@@ -10,7 +10,7 @@ namespace SuperBASIC.Functions
 		{
 			int a = start;
 			int b = end;
-			float pivot = Memory.MemoryGet((short)((b - a)/2));
+			float pivot = Memory.MemoryGet((short)((b + a)/2));
 			Console.WriteLine("pivot:" + pivot);
 
 			while (true)
