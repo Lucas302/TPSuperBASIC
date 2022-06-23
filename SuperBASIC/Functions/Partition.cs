@@ -4,8 +4,13 @@ using System.Text;
 
 namespace SuperBASIC.Functions
 {
+    internal static class Piv
+    {
+        public static int pivot;
+    }
     public class Partition : IFunction
     {
+        
 
         public static short Part(int start, int end)
         {
@@ -48,6 +53,7 @@ namespace SuperBASIC.Functions
             }
             // réarrange les éléments sur le pivot
             int pivot = Part(low, high);
+            Piv.pivot = (int)Memory.MemoryGet((short)pivot);
             // se reproduit sur le sous-tableau contenant des éléments inférieurs au pivot
             QuickSort(low, pivot);
             // se reproduisent sur le sous-tableau contenant des éléments qui sont plus que le pivot
@@ -58,13 +64,15 @@ namespace SuperBASIC.Functions
         {
             short start = (short)arguments[0].GetValue();
             short end = (short)arguments[1].GetValue();
-
+            int a = arguments.Count;
             QuickSort((int)start, (int)end);
             
             for (short x = start; x <= end; x++)
             {
                 Console.WriteLine("Mem: {0}", Memory.MemoryGet(x));
+                
             }
+            Console.WriteLine("pivot: {0}",Piv.pivot);
             return 0f;
         }
     }
