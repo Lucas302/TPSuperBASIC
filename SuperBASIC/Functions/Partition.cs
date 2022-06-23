@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SuperBASIC.Functions
 {
-    class Partition : IFunction
+    public class Partition : IFunction
     {
 
         public static short Part(int start, int end)
@@ -67,7 +67,7 @@ namespace SuperBASIC.Functions
             
             for (short x = start; x <= end; x++)
             {
-                Console.WriteLine(Memory.MemoryGet(x));
+                Console.WriteLine("?"+Memory.MemoryGet(x));
             }
             return 0f;
         }

@@ -36,6 +36,9 @@
     <None Update="CasDeTest\M5Test.basic">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="CasDeTest\PartitionTests.basic">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="CasDeTest\PrebuiltTest-TestA.basic">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
